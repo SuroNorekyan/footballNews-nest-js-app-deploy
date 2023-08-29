@@ -12,7 +12,7 @@ import { UsersModule } from './user/user.module';
 
 const databaseUrl =
   process.env.DATABASE_URL ||
-  'mongodb+srv://surosuro:t8elNujcuiMJhs58@cluster0.vd1jepj.mongodb.net/?retryWrites=true&w=majority';
+  'mongodb+srv://football-s-main-db-09bec60dfd7:j1Y8C582ZUYHXk6BTB6GbG4v7tndhN@prod-us-central1-2.ih9la.mongodb.net/football-s-main-db-09bec60dfd7';
 
 @Module({
   imports: [
