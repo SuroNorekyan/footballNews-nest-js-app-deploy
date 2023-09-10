@@ -17,6 +17,11 @@ export class SinglePost {
 
   @Prop({ type: String, required: true })
   img: string;
+  @Prop({ type: String, required: false })
+  img2: string;
+
+  @Prop({ type: String, required: false })
+  img3: string;
 
   @Prop({ type: String, required: false })
   videoUrl: string;
