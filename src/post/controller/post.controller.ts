@@ -64,6 +64,13 @@ export class PostController {
     return this.postService.findAnalyticsPosts();
   }
 
+  @Get('armenianFootball')
+  async findArmenianFootballPosts(
+    @Query('carousel') carousel: boolean,
+  ): Promise<SinglePost[]> {
+    return this.postService.findArmenianFootballPosts();
+  }
+
   @UseGuards(JwtAuthGuard)
   @Post()
   create(@Body() createPostDto: CreatePostDto): Promise<SinglePost> {

@@ -71,4 +71,8 @@ export class PostService {
   async findAnalyticsPosts(): Promise<SinglePost[]> {
     return this.postModel.find({ analytics: true }).exec();
   }
+
+  async findArmenianFootballPosts(): Promise<SinglePost[]> {
+    return this.postModel.find({ armenianFootball: true }).exec();
+  }
 }

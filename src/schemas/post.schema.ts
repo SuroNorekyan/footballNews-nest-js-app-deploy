@@ -43,6 +43,9 @@ export class SinglePost {
 
   @Prop({ type: Boolean, default: false })
   analytics: boolean;
+
+  @Prop({ type: Boolean, default: false })
+  armenianFootball: boolean;
 }
 
 export const PostSchema = SchemaFactory.createForClass(SinglePost);
