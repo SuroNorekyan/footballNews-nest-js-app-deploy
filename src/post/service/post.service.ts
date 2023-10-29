@@ -75,4 +75,25 @@ export class PostService {
   async findArmenianFootballPosts(): Promise<SinglePost[]> {
     return this.postModel.find({ armenianFootball: true }).exec();
   }
+
+  async updateBooleanProperty(
+    postId: string,
+    updatePostDto: UpdatePostDto,
+  ): Promise<SinglePost | null> {
+    // Create an object to hold the update values
+    const update: any = {};
+
+    // Loop through the properties in the DTO and add them to the update object
+    for (const key in updatePostDto) {
+      if (typeof updatePostDto[key] === 'boolean') {
+        update[key] = updatePostDto[key];
+      }
+    }
+
+    // Update the post with the specified postId
+    const updatedPost = await this.postModel.findByIdAndUpdate(postId, update, {
+      new: true,
+    });
+    return updatedPost;
+  }
 }

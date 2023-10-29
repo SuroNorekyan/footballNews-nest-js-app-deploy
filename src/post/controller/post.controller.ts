@@ -87,6 +87,16 @@ export class PostController {
     return this.postService.findOne(id);
   }
 
+  @UseGuards(JwtAuthGuard)
+  @Put(':postId/update-boolean-property')
+  async updateBooleanProperty(
+    @Param('postId') postId: string,
+    @Body() updatePostDto: UpdatePostDto,
+  ) {
+    return this.postService.updateBooleanProperty(postId, updatePostDto);
+  }
+
+  @UseGuards(JwtAuthGuard)
   @Put(':id')
   update(
     @Param('id') id: string,
@@ -101,6 +111,7 @@ export class PostController {
     return this.postService.remove(id);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Delete()
   async deleteAll(): Promise<{ message: string }> {
     const response = await this.postService.deleteAll();
